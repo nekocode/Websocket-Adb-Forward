@@ -37,21 +37,30 @@ import java.io.IOException;
 /**
  * @author nekocode (nekocode.cn@gmail.com)
  */
-public class WebSocketServer {
-    private static final String TAG = "WebSocketServer";
+public class LocalWebSocketServer {
+    private static final String TAG = "LocalWebSocketServer";
     private final LocalSocketServer mServer;
 
 
     /**
+     * Create and start a new local websocket server
+     *
      * @param context the context.
      * @param address the local socket address to listen on.
      * @param endpoint the websocket endpoint.
      */
-    public static WebSocketServer start(Context context, String address, SimpleEndpoint endpoint) {
-        return new WebSocketServer(context, address, endpoint);
+    public static LocalWebSocketServer createAndStart(Context context, String address, SimpleEndpoint endpoint) {
+        return new LocalWebSocketServer(context, address, endpoint);
     }
 
-    private WebSocketServer(Context context, String address, SimpleEndpoint endpoint) {
+    /**
+     * Stop the server
+     */
+    public void stop() {
+        mServer.stop();
+    }
+
+    private LocalWebSocketServer(Context context, String address, SimpleEndpoint endpoint) {
         mServer = new LocalSocketServer(address, address,
                 new LazySocketHandler(new ForwardSocketHandlerFactory(context, endpoint)));
 
@@ -67,13 +76,6 @@ public class WebSocketServer {
                 }
             }
         }.start();
-    }
-
-    /**
-     * Stop the server
-     */
-    public void stop() {
-        mServer.stop();
     }
 
 
