@@ -8,5 +8,24 @@
     tools:context="cn.nekocode.websocketserver.example.MainActivity"
     >
 
+    <cn.nekocode.websocketserver.example.MessageView
+        android:id="@+id/messageTv"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        />
+
+    <EditText
+        android:id="@+id/messageEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/input_message"
+        />
+
+    <Button
+        android:id="@+id/sendBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/send"
+        />
 
 </LinearLayout>

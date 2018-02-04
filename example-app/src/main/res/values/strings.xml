@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">WebSocketAdbForward</string>
+    <string name="input_message">Input message</string>
+    <string name="send">Send</string>
+
+    <string name="msg_prefix_sys">System:&#160;</string>
+    <string name="msg_prefix_server">Server:&#160;</string>
+    <string name="msg_prefix_client">Client:&#160;</string>
+
+    <string name="msg_server_started">Server started, and now is listening on address \'%s\'.</string>
+    <string name="msg_client_connected">Connected to a new remote client.</string>
+    <string name="msg_client_ignored">Ignored a binary message from remote.</string>
+    <string name="msg_client_disconnected">Disconnected a remote client.</string>
+    <string name="msg_client_error">Something went wrong.</string>
 </resources>
